@@ -1,0 +1,156 @@
+{
+  "valid": [
+    {
+      "id": "simple-https",
+      "input": "https://example.com",
+      "note": "dominio simple, sin path"
+    },
+    {
+      "id": "simple-http",
+      "input": "http://example.com/",
+      "note": "scheme http explícito"
+    },
+    {
+      "id": "www-prefix",
+      "input": "https://www.github.com/anthropics/claude-code",
+      "note": "prefijo www. + path multi-segmento"
+    },
+    {
+      "id": "deep-path",
+      "input": "https://docs.example.com/guides/getting-started/installation",
+      "note": "path profundo"
+    },
+    {
+      "id": "query-string",
+      "input": "https://example.com/search?q=hello+world&page=2&sort=relevance",
+      "note": "query string con múltiples parámetros"
+    },
+    {
+      "id": "fragment",
+      "input": "https://example.com/docs#section-2",
+      "note": "URL con fragmento propio (distinto del fragmento v1. de shortedd)"
+    },
+    {
+      "id": "port-explicit",
+      "input": "https://localhost:8080/app",
+      "note": "puerto explícito"
+    },
+    {
+      "id": "port-and-query",
+      "input": "http://192.168.1.10:3000/status?check=true",
+      "note": "IP + puerto + query"
+    },
+    {
+      "id": "unicode-host",
+      "input": "https://münchen.de/wetter",
+      "note": "hostname Unicode, debe normalizarse a punycode (xn--)"
+    },
+    {
+      "id": "unicode-path",
+      "input": "https://example.com/café/menú?item=café",
+      "note": "path y query con caracteres Unicode"
+    },
+    {
+      "id": "cyrillic-host",
+      "input": "https://пример.рф/страница",
+      "note": "hostname y path totalmente Unicode (cirílico)"
+    },
+    {
+      "id": "tracking-params",
+      "input": "https://shop.example.com/product/42?utm_source=newsletter&utm_medium=email&utm_campaign=spring&ref=abc",
+      "note": "debe perder utm_* al normalizar; conserva ref"
+    },
+    {
+      "id": "fbclid",
+      "input": "https://example.com/article?fbclid=IwAR123abc&id=99",
+      "note": "debe perder fbclid; conserva id"
+    },
+    {
+      "id": "gclid",
+      "input": "https://example.com/landing?gclid=Cj0KCQ&utm_source=google",
+      "note": "debe perder gclid y utm_source"
+    },
+    {
+      "id": "trailing-slash",
+      "input": "https://example.com/path/",
+      "note": "slash final"
+    },
+    {
+      "id": "accidental-whitespace",
+      "input": "  https://example.com/spaced  ",
+      "note": "espacios accidentales alrededor de la URL"
+    },
+    {
+      "id": "encoded-space-path",
+      "input": "https://example.com/path%20with%20spaces",
+      "note": "espacios porcentaje-codificados en el path"
+    },
+    {
+      "id": "long-query-token",
+      "input": "https://example.com/api/v1/resource?token=aVeryLongOpaqueTokenStringThatSimulatesARealWorldAuthTokenUsedByManyApisxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "note": "query larga (~260 chars) con un token opaco; el caso límite exacto de MAX_INPUT_URL_LENGTH se genera en el propio test, no aquí"
+    },
+    {
+      "id": "dictionary-domain",
+      "input": "https://github.com/vitejs/vite",
+      "note": "dominio presente en el diccionario v1 (host-dict candidate)"
+    },
+    {
+      "id": "youtube-watch",
+      "input": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "note": "dominio + token de path frecuentes (watch)"
+    }
+  ],
+  "invalid": [
+    {
+      "id": "javascript-scheme",
+      "input": "javascript:alert(1)",
+      "reason": "scheme peligroso, debe rechazarse"
+    },
+    {
+      "id": "data-scheme",
+      "input": "data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==",
+      "reason": "scheme peligroso, debe rechazarse"
+    },
+    {
+      "id": "file-scheme",
+      "input": "file:///etc/passwd",
+      "reason": "scheme peligroso, debe rechazarse"
+    },
+    {
+      "id": "no-scheme",
+      "input": "example.com/path",
+      "reason": "sin scheme http(s) explícito"
+    },
+    {
+      "id": "ftp-scheme",
+      "input": "ftp://files.example.com/archive.zip",
+      "reason": "scheme no http(s)"
+    },
+    {
+      "id": "empty-string",
+      "input": "",
+      "reason": "entrada vacía"
+    },
+    {
+      "id": "whitespace-only",
+      "input": "   ",
+      "reason": "sólo espacios"
+    },
+    {
+      "id": "malformed-url",
+      "input": "https://",
+      "reason": "sin host"
+    },
+    {
+      "id": "malformed-brackets",
+      "input": "https://exa mple.com/broken url with spaces",
+      "reason": "host y path malformados con espacios sin codificar"
+    },
+    {
+      "id": "unknown-scheme",
+      "input": "chrome-extension://abcdefghijklmnop/index.html",
+      "reason": "scheme de extensión de navegador, no http(s)"
+    }
+  ]
+}

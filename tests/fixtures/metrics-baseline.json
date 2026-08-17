@@ -1,0 +1,148 @@
+{
+  "totalOriginalLength": 1040,
+  "totalEncodedBytes": 911,
+  "totalWebLength": 1221,
+  "totalQrLength": 1374,
+  "fixtures": [
+    {
+      "id": "simple-https",
+      "originalLength": 19,
+      "encodedBytes": 17,
+      "webLength": 23,
+      "qrLength": 26
+    },
+    {
+      "id": "simple-http",
+      "originalLength": 19,
+      "encodedBytes": 17,
+      "webLength": 23,
+      "qrLength": 26
+    },
+    {
+      "id": "www-prefix",
+      "originalLength": 45,
+      "encodedBytes": 30,
+      "webLength": 40,
+      "qrLength": 45
+    },
+    {
+      "id": "deep-path",
+      "originalLength": 60,
+      "encodedBytes": 59,
+      "webLength": 79,
+      "qrLength": 89
+    },
+    {
+      "id": "query-string",
+      "originalLength": 62,
+      "encodedBytes": 55,
+      "webLength": 74,
+      "qrLength": 83
+    },
+    {
+      "id": "fragment",
+      "originalLength": 34,
+      "encodedBytes": 31,
+      "webLength": 42,
+      "qrLength": 47
+    },
+    {
+      "id": "port-explicit",
+      "originalLength": 26,
+      "encodedBytes": 21,
+      "webLength": 28,
+      "qrLength": 32
+    },
+    {
+      "id": "port-and-query",
+      "originalLength": 42,
+      "encodedBytes": 35,
+      "webLength": 47,
+      "qrLength": 53
+    },
+    {
+      "id": "unicode-host",
+      "originalLength": 25,
+      "encodedBytes": 31,
+      "webLength": 42,
+      "qrLength": 47
+    },
+    {
+      "id": "unicode-path",
+      "originalLength": 39,
+      "encodedBytes": 53,
+      "webLength": 71,
+      "qrLength": 80
+    },
+    {
+      "id": "cyrillic-host",
+      "originalLength": 26,
+      "encodedBytes": 77,
+      "webLength": 103,
+      "qrLength": 116
+    },
+    {
+      "id": "tracking-params",
+      "originalLength": 102,
+      "encodedBytes": 38,
+      "webLength": 51,
+      "qrLength": 57
+    },
+    {
+      "id": "fbclid",
+      "originalLength": 51,
+      "encodedBytes": 27,
+      "webLength": 36,
+      "qrLength": 41
+    },
+    {
+      "id": "gclid",
+      "originalLength": 58,
+      "encodedBytes": 26,
+      "webLength": 35,
+      "qrLength": 39
+    },
+    {
+      "id": "trailing-slash",
+      "originalLength": 25,
+      "encodedBytes": 24,
+      "webLength": 32,
+      "qrLength": 36
+    },
+    {
+      "id": "accidental-whitespace",
+      "originalLength": 30,
+      "encodedBytes": 25,
+      "webLength": 34,
+      "qrLength": 38
+    },
+    {
+      "id": "encoded-space-path",
+      "originalLength": 40,
+      "encodedBytes": 39,
+      "webLength": 52,
+      "qrLength": 59
+    },
+    {
+      "id": "long-query-token",
+      "originalLength": 264,
+      "encodedBytes": 263,
+      "webLength": 351,
+      "qrLength": 395
+    },
+    {
+      "id": "dictionary-domain",
+      "originalLength": 30,
+      "encodedBytes": 19,
+      "webLength": 26,
+      "qrLength": 29
+    },
+    {
+      "id": "youtube-watch",
+      "originalLength": 43,
+      "encodedBytes": 24,
+      "webLength": 32,
+      "qrLength": 36
+    }
+  ]
+}
