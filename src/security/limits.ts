@@ -9,9 +9,3 @@ export const MAX_PAYLOAD_STRING_LENGTH = 4000
 
 /** Bytes del blob binario codificado, antes de base64url. */
 export const MAX_WEB_PAYLOAD_BYTES = 1500
-
-/**
- * Bytes del blob binario codificado, antes de base45. Mantiene el QR en
- * versión <=10 con ECC M/Q, rango fiable para cámaras de móvil.
- */
-export const MAX_QR_PAYLOAD_BYTES = 90

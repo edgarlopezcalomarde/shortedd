@@ -1,8 +1,11 @@
 import { expect, test } from '@playwright/test'
 
-test('generating a QR and opening its options triggers no CSP violations', async ({
+test('generating and copying a link triggers no CSP violations', async ({
   page,
+  context,
 }) => {
+  await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+
   const consoleErrors: string[] = []
   page.on('console', (msg) => {
     if (msg.type() === 'error') consoleErrors.push(msg.text())
@@ -14,13 +17,8 @@ test('generating a QR and opening its options triggers no CSP violations', async
     .fill('https://github.com/anthropics/claude-code')
   await page.getByRole('button', { name: /generar/i }).click()
 
-  await page.getByRole('tab', { name: 'QR' }).click()
-  await expect(page.locator('svg').last()).toBeVisible()
-
-  await page.getByRole('button', { name: /opciones/i }).click()
-  await expect(
-    page.getByText('Corrección de errores', { exact: true }),
-  ).toBeVisible()
+  await expect(page.getByText(/#v1\./)).toBeVisible()
+  await page.getByRole('button', { name: /copiar/i }).click()
 
   const cspViolations = consoleErrors.filter((text) =>
     /content security policy/i.test(text),
