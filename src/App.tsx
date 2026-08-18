@@ -39,8 +39,8 @@ function App() {
             Enlaces privados, sin servidor
           </h1>
           <p className="text-muted-foreground max-w-md text-sm text-balance sm:text-base">
-            El destino viaja dentro del propio enlace. Sin cuentas, sin base
-            de datos, sin analítica de terceros.
+            El destino viaja dentro del propio enlace. Sin cuentas, sin base de
+            datos, sin analítica de terceros.
           </p>
         </div>
 

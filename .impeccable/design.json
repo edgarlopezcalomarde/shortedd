@@ -8,19 +8,46 @@
         "role": "primary",
         "displayName": "Signal Indigo",
         "canonical": "oklch(0.45 0.211 267)",
-        "tonalRamp": ["#140064", "#0d008e", "#1b32ba", "#385ee7", "#5b89ff", "#7badff", "#99ceff", "#afe6ff"]
+        "tonalRamp": [
+          "#140064",
+          "#0d008e",
+          "#1b32ba",
+          "#385ee7",
+          "#5b89ff",
+          "#7badff",
+          "#99ceff",
+          "#afe6ff"
+        ]
       },
       "paper": {
         "role": "neutral",
         "displayName": "Paper",
         "canonical": "oklch(0.976 0.002 95)",
-        "tonalRamp": ["#0c0b08", "#2a2926", "#4b4a47", "#706f6b", "#969591", "#b8b7b3", "#d8d7d3", "#efeeea"]
+        "tonalRamp": [
+          "#0c0b08",
+          "#2a2926",
+          "#4b4a47",
+          "#706f6b",
+          "#969591",
+          "#b8b7b3",
+          "#d8d7d3",
+          "#efeeea"
+        ]
       },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
         "canonical": "oklch(0.2 0.008 260)",
-        "tonalRamp": ["#0c0b08", "#2a2926", "#4b4a47", "#706f6b", "#969591", "#b8b7b3", "#d8d7d3", "#efeeea"]
+        "tonalRamp": [
+          "#0c0b08",
+          "#2a2926",
+          "#4b4a47",
+          "#706f6b",
+          "#969591",
+          "#b8b7b3",
+          "#d8d7d3",
+          "#efeeea"
+        ]
       },
       "hairline": {
         "role": "neutral",
@@ -34,17 +61,28 @@
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The single H1 on the page." },
-      "body": { "displayName": "Body", "purpose": "Positioning subtext, error copy, tracking-removed toast." },
-      "data": { "displayName": "Data / Mono", "purpose": "The URL input value and the generated link/token — literal data only, never decorative." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The single H1 on the page."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Positioning subtext, error copy, tracking-removed toast."
+      },
+      "data": {
+        "displayName": "Data / Mono",
+        "purpose": "The URL input value and the generated link/token — literal data only, never decorative."
+      }
     },
     "shadows": [],
     "motion": [
-      { "name": "result-reveal", "value": "animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out", "purpose": "The single authored entrance moment: the result field appearing under the input. Skipped entirely under prefers-reduced-motion." }
+      {
+        "name": "result-reveal",
+        "value": "animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out",
+        "purpose": "The single authored entrance moment: the result field appearing under the input. Skipped entirely under prefers-reduced-motion."
+      }
     ],
-    "breakpoints": [
-      { "name": "sm", "value": "640px" }
-    ]
+    "breakpoints": [{ "name": "sm", "value": "640px" }]
   },
   "components": [
     {
@@ -91,9 +129,21 @@
       "No header, no navigation, no logo mark — the centered column is the entire interface."
     ],
     "rules": [
-      { "name": "The One Accent Rule", "body": "Signal Indigo appears in exactly two places: the primary button and focus/active states. It never colors body text, icons at rest, or decorative surfaces.", "section": "colors" },
-      { "name": "The Data-Only Mono Rule", "body": "Monospace type is used exclusively for the URL and the generated token — never for headings, body copy, or UI chrome.", "section": "typography" },
-      { "name": "The Flat-By-Default Rule", "body": "No box-shadow appears anywhere in the interface. Separation between surfaces comes from a 1px hairline border and, at most, a one-step tonal shift (Paper → Card).", "section": "elevation" }
+      {
+        "name": "The One Accent Rule",
+        "body": "Signal Indigo appears in exactly two places: the primary button and focus/active states. It never colors body text, icons at rest, or decorative surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Data-Only Mono Rule",
+        "body": "Monospace type is used exclusively for the URL and the generated token — never for headings, body copy, or UI chrome.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "No box-shadow appears anywhere in the interface. Separation between surfaces comes from a 1px hairline border and, at most, a one-step tonal shift (Paper → Card).",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do reserve Signal Indigo for the primary action and focus/active states only.",

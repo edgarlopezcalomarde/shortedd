@@ -70,9 +70,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: /generar/i }))
 
     await waitFor(() => {
-      expect(
-        screen.getByRole('button', { name: /copiar/i }),
-      ).toBeEnabled()
+      expect(screen.getByRole('button', { name: /copiar/i })).toBeEnabled()
     })
   })
 })

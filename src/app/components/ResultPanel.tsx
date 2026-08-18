@@ -14,10 +14,7 @@ export function ResultPanel({ result }: ResultPanelProps) {
   const { copied, copy } = useClipboard()
   const reducedMotion = useReducedMotion()
   const canShare = typeof navigator !== 'undefined' && 'share' in navigator
-  const savings = savingsPct(
-    result.normalizedUrl.length,
-    result.webLink.length,
-  )
+  const savings = savingsPct(result.normalizedUrl.length, result.webLink.length)
 
   return (
     <section
