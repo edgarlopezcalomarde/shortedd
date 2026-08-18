@@ -4,15 +4,12 @@ import { ThemeProvider } from 'next-themes'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from '@/App'
 import { Toaster } from '@/components/ui/sonner'
-import { TooltipProvider } from '@/components/ui/tooltip'
 
 function renderApp() {
   return render(
     <ThemeProvider attribute="class" enableSystem>
-      <TooltipProvider>
-        <App />
-        <Toaster />
-      </TooltipProvider>
+      <App />
+      <Toaster />
     </ThemeProvider>,
   )
 }
@@ -64,7 +61,7 @@ describe('App', () => {
     })
   })
 
-  it('offers a QR tab for a normal-length URL', async () => {
+  it('offers a copy button once the link is generated', async () => {
     const user = userEvent.setup()
     renderApp()
 
@@ -73,7 +70,9 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: /generar/i }))
 
     await waitFor(() => {
-      expect(screen.getByRole('tab', { name: 'QR' })).toBeEnabled()
+      expect(
+        screen.getByRole('button', { name: /copiar/i }),
+      ).toBeEnabled()
     })
   })
 })

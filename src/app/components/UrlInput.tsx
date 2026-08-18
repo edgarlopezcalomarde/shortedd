@@ -19,7 +19,7 @@ export function UrlInput({ onSubmit, error }: UrlInputProps) {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full flex-col gap-2">
-      <div className="flex flex-col gap-2 sm:flex-row">
+      <div className="border-input has-[input[aria-invalid]]:border-destructive has-[input[aria-invalid]]:ring-destructive/20 has-focus-visible:border-ring has-focus-visible:ring-ring/50 flex flex-col gap-1.5 rounded-xl border bg-transparent p-1.5 shadow-sm transition-[color,box-shadow] has-focus-visible:ring-3 sm:flex-row sm:gap-0">
         <Input
           type="text"
           inputMode="url"
@@ -32,9 +32,9 @@ export function UrlInput({ onSubmit, error }: UrlInputProps) {
           onChange={(event) => setValue(event.target.value)}
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? 'url-input-error' : undefined}
-          className="h-12 flex-1 text-base"
+          className="h-11 flex-1 border-0 bg-transparent px-3 font-mono text-base tracking-tight shadow-none focus-visible:ring-0 dark:bg-transparent"
         />
-        <Button type="submit" size="lg" className="h-12 gap-1.5 px-6">
+        <Button type="submit" size="lg" className="h-11 gap-1.5 px-6">
           Generar
           <ArrowRight className="size-4" />
         </Button>

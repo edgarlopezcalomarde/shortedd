@@ -19,9 +19,9 @@ export default defineConfig({
         name: 'Shortedd',
         short_name: 'Shortedd',
         description:
-          'Acortador de URLs y generador de QR sin backend: el destino viaja dentro del propio enlace.',
-        theme_color: '#5b21b6',
-        background_color: '#ffffff',
+          'Acortador de URLs sin backend: el destino viaja dentro del propio enlace.',
+        theme_color: '#4636d8',
+        background_color: '#f9f8f6',
         display: 'standalone',
         start_url: '.',
         lang: 'es',

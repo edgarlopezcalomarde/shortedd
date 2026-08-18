@@ -6,7 +6,6 @@ import App from './App.tsx'
 import { ConfusableWarning } from './app/components/ConfusableWarning.tsx'
 import { ErrorView } from './app/components/ErrorView.tsx'
 import { Toaster } from './components/ui/sonner.tsx'
-import { TooltipProvider } from './components/ui/tooltip.tsx'
 import type { BootstrapDecision } from './routing/bootstrap.ts'
 import { runBootstrap } from './routing/bootstrap.ts'
 
@@ -34,10 +33,8 @@ function render(decision: BootstrapDecision): void {
   root.render(
     <StrictMode>
       <ThemeProvider attribute="class" enableSystem>
-        <TooltipProvider>
-          <App />
-          <Toaster />
-        </TooltipProvider>
+        <App />
+        <Toaster />
       </ThemeProvider>
     </StrictMode>,
   )

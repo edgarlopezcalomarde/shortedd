@@ -11,11 +11,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Acortador de URLs y generador de QR sin backend: el destino viaja dentro del propio enlace, sin cuentas ni analítica de terceros."
+      content="Acortador de URLs sin backend: el destino viaja dentro del propio enlace, sin cuentas ni analítica de terceros."
     />
     <title>Shortedd</title>
   </head>
   <body>
+    <!--
+    THESIS: Shortedd shows its mechanism instead of hiding it behind a
+    generic "type here, get magic box" utility shell — the pasted URL
+    visibly becomes the compact code embedded in the link.
+    OWN-WORLD: codebook/cipher-table grammar. Graphite-on-paper ground,
+    near-black ink, one indigo accent reserved for the live/active state,
+    monospaced type for anything that IS data (the URL, the token),
+    hairline rules like a ruled ledger, flat — no cards, shadows, or
+    gradients.
+    STORY: paste a URL, watch it restate itself as a monospaced token the
+    instant it is ready, copy or share the short link — understanding
+    without being told that nothing left the browser.
+    FIRST VIEWPORT: no header/nav. Centered single column: title + one-line
+    positioning statement, one URL field below it, and — the instant a link
+    exists — a flat hairline-bordered field holding the encoded token as one
+    continuous monospaced string (one accessible text node, not fragmented
+    per character, so it stays legible and screen-reader/testable) with
+    copy/share beside it. Vertically centered, no scroll required.
+    FORM: codebook/cipher-table direction, IMPECCABLE'S PICK, seed key
+    4b878633, chosen over assigned index 7 (telégrafo/cinta de señal) on
+    the decision page (key db84a60f).
+    FINISH: unreviewed and undocumented is unfinished; this build ends
+    with the finish review, the verdict, DESIGN.md, and every shipping
+    raster carrying its provenance.
+    -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
