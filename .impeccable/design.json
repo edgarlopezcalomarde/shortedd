@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T00:00:00.000Z",
+  "title": "Design System: Shortedd",
+  "extensions": {
+    "colorMeta": {
+      "signal-indigo": {
+        "role": "primary",
+        "displayName": "Signal Indigo",
+        "canonical": "oklch(0.45 0.211 267)",
+        "tonalRamp": ["#140064", "#0d008e", "#1b32ba", "#385ee7", "#5b89ff", "#7badff", "#99ceff", "#afe6ff"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(0.976 0.002 95)",
+        "tonalRamp": ["#0c0b08", "#2a2926", "#4b4a47", "#706f6b", "#969591", "#b8b7b3", "#d8d7d3", "#efeeea"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.2 0.008 260)",
+        "tonalRamp": ["#0c0b08", "#2a2926", "#4b4a47", "#706f6b", "#969591", "#b8b7b3", "#d8d7d3", "#efeeea"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.87 0.005 95)"
+      },
+      "destructive": {
+        "role": "semantic",
+        "displayName": "Destructive Red",
+        "canonical": "oklch(0.577 0.245 27.325)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single H1 on the page." },
+      "body": { "displayName": "Body", "purpose": "Positioning subtext, error copy, tracking-removed toast." },
+      "data": { "displayName": "Data / Mono", "purpose": "The URL input value and the generated link/token — literal data only, never decorative." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "result-reveal", "value": "animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out", "purpose": "The single authored entrance moment: the result field appearing under the input. Skipped entirely under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single 'Generar' action that submits the URL form.",
+      "html": "<button class=\"ds-btn-primary\">Generar<svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 44px; padding: 0 24px; border: none; border-radius: 6px; background: #2340c8; color: #f6f8fd; font-family: 'Geist Variable', ui-sans-serif, sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: background-color 0.15s, transform 0.1s; } .ds-btn-primary:hover { background: rgba(35,64,200,0.8); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(35,64,200,0.5); } .ds-btn-primary:active { transform: translateY(1px); } .ds-icon { width: 16px; height: 16px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Copiar / Compartir actions in the result row: icon plus a mandatory visible label.",
+      "html": "<button class=\"ds-btn-outline\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"9\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1\"/></svg>Copiar</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border: 1px solid #d5d4d1; border-radius: 6px; background: transparent; color: #14161a; font-family: 'Geist Variable', ui-sans-serif, sans-serif; font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: background-color 0.15s; } .ds-btn-outline:hover { background: #ecebe9; } .ds-btn-outline:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(35,64,200,0.5); border-color: #2340c8; } .ds-icon { width: 14px; height: 14px; }"
+    },
+    {
+      "name": "URL Input Row",
+      "kind": "input",
+      "refersTo": "data-field",
+      "description": "The URL field and the Generar button sharing one hairline-bordered row.",
+      "html": "<div class=\"ds-input-row\"><input class=\"ds-input\" type=\"text\" placeholder=\"Pega o escribe una URL, p. ej. https://ejemplo.com/pagina\" /><button class=\"ds-btn-primary\">Generar</button></div>",
+      "css": ".ds-input-row { display: flex; align-items: center; gap: 6px; padding: 6px; border: 1px solid #d5d4d1; border-radius: 8.4px; background: transparent; } .ds-input-row:focus-within { border-color: #2340c8; box-shadow: 0 0 0 3px rgba(35,64,200,0.5); } .ds-input { flex: 1; min-width: 0; height: 44px; border: none; background: transparent; padding: 0 12px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 1rem; letter-spacing: -0.02em; color: #14161a; outline: none; } .ds-input::placeholder { color: #585b5f; font-family: 'Geist Variable', ui-sans-serif, sans-serif; }"
+    },
+    {
+      "name": "Result Field",
+      "kind": "custom",
+      "refersTo": "data-field",
+      "description": "The generated link shown as one continuous monospace string, with inline Copiar/Compartir.",
+      "html": "<div class=\"ds-result\"><span class=\"ds-result-link\">https://short.example/#v1.FAAXL2Fu…</span><button class=\"ds-btn-outline\">Copiar</button></div>",
+      "css": ".ds-result { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid #d5d4d1; border-radius: 6px; background: #fcfcfc; } .ds-result-link { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 0.875rem; letter-spacing: -0.02em; color: #14161a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Codebook",
+    "overview": "Shortedd reads like a technical reference document rather than a marketing surface: a codebook or cipher table where a value goes in and its encoded form appears, plainly, in the same alphabet the whole page speaks. There is no dashboard chrome, no card stack, no navigation to get out of the way of — one centered column, one field, one flat result. The design's entire argument is that nothing is hidden: the destination lives inside the link, and the interface says so by showing the link as literal, legible, monospaced data the instant it exists.\n\nThe system rejects the generic 'type here, get a magic box' utility template (a bordered card floating on a gradient backdrop, a loading spinner standing in for real-time feedback) in favor of a flatter, quieter register: paper-toned ground, near-black ink, hairline rules, and exactly one accent color reserved for the single moment that matters — the primary action and anything actively confirmed. Dark mode is not an afterthought skin; it inverts the same paper/ink/hairline relationship onto a graphite ground, because this is a developer-facing tool used at any hour.",
+    "keyCharacteristics": [
+      "Flat throughout — no shadows, no cards, no gradients, no glass.",
+      "Monospace is reserved for data (the URL, the encoded token); prose stays in a humanist sans.",
+      "A single indigo accent, spent only on the primary action and focus/active state.",
+      "Hairline (1px) rules and borders do the structural work shadows would otherwise do.",
+      "No header, no navigation, no logo mark — the centered column is the entire interface."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Signal Indigo appears in exactly two places: the primary button and focus/active states. It never colors body text, icons at rest, or decorative surfaces.", "section": "colors" },
+      { "name": "The Data-Only Mono Rule", "body": "Monospace type is used exclusively for the URL and the generated token — never for headings, body copy, or UI chrome.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "No box-shadow appears anywhere in the interface. Separation between surfaces comes from a 1px hairline border and, at most, a one-step tonal shift (Paper → Card).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reserve Signal Indigo for the primary action and focus/active states only.",
+      "Do set any URL, token, or other literal data in the mono face; set every other word in the sans face.",
+      "Do use a 1px hairline border as the only structural separator between surfaces.",
+      "Do label every button with visible text, even when it also carries an icon.",
+      "Do keep the page to a single centered column with no header/nav."
+    ],
+    "donts": [
+      "Don't add a shadow, gradient, or glass/blur effect anywhere in this system.",
+      "Don't introduce a second accent color; reach for Destructive red or a neutral first.",
+      "Don't fragment the generated link into per-character DOM nodes for visual effect.",
+      "Don't reintroduce a top navigation bar, logo lockup, or persistent header.",
+      "Don't use an icon without a visible text label on an actionable button."
+    ]
+  }
+}
